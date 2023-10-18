@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
+import 'my_colors.dart';
+
 class OtpForm extends StatelessWidget {
-  const OtpForm({
+  OtpForm({
     super.key,
     required this.isLightTheme,
     required this.toggleTheme,
@@ -10,16 +12,21 @@ class OtpForm extends StatelessWidget {
   final bool isLightTheme;
   final void Function() toggleTheme;
 
+  final _formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
-    double deviceWidth = MediaQuery.sizeOf(context).width;
+    final MyColors myColors = Theme.of(context).extension<MyColors>()!;
 
     return SafeArea(
       child: Scaffold(
+        backgroundColor: myColors.backgroundColor,
         appBar: AppBar(
-          backgroundColor: Theme.of(context).primaryColor,
+          backgroundColor: myColors.appbarColor,
           leading: IconButton(
-            onPressed: () {},
+            onPressed: () {
+              _formKey.currentState?.reset();
+            },
             icon: const Icon(Icons.arrow_back),
           ),
           actions: [
@@ -36,12 +43,13 @@ class OtpForm extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.only(top: 140),
                 child: Form(
+                  key: _formKey,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       SizedBox(
                         width: 60,
-                        height: 80,
+                        height: 100,
                         child: Center(
                           child: TextFormField(
                             onChanged: (value) {
@@ -135,7 +143,6 @@ class OtpForm extends StatelessWidget {
                               counterText: '',
                               border: OutlineInputBorder(),
                               contentPadding: EdgeInsets.zero,
-
                             ),
                           ),
                         ),
@@ -151,7 +158,11 @@ class OtpForm extends StatelessWidget {
               Flexible(
                 fit: FlexFit.tight,
                 child: FilledButton.tonal(
-                  onPressed: () {},
+                  onPressed: () {
+                    _formKey.currentState?.reset();
+                  },
+                  style: FilledButton.styleFrom(
+                      backgroundColor: myColors.resendColor),
                   child: const Text('Resend'),
                 ),
               ),
@@ -159,6 +170,8 @@ class OtpForm extends StatelessWidget {
                 fit: FlexFit.tight,
                 child: FilledButton(
                   onPressed: () {},
+                  style: FilledButton.styleFrom(
+                      backgroundColor: myColors.confirmColor),
                   child: const Text('Confirm'),
                 ),
               ),
