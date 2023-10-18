@@ -1,3 +1,3 @@
 # pin_input
 
-A new Flutter project.
+Pin input page with lerp effect between light/dark mode.
