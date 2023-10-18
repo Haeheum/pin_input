@@ -37,118 +37,122 @@ class OtpForm extends StatelessWidget {
           ],
         ),
         body: Column(children: [
+          const SizedBox(
+            height: 140,
+          ),
+          Text(
+            'Enter Your Code',
+            style: Theme.of(context).textTheme.headlineSmall,
+          ),
           Expanded(
             child: Align(
               alignment: Alignment.topCenter,
-              child: Padding(
-                padding: const EdgeInsets.only(top: 140),
-                child: Form(
-                  key: _formKey,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      SizedBox(
-                        width: 60,
-                        height: 100,
-                        child: Center(
-                          child: TextFormField(
-                            onChanged: (value) {
-                              if (value.isNotEmpty) {
-                                FocusScope.of(context).nextFocus();
-                              }
-                            },
-                            onTapOutside: (_) {
-                              FocusScope.of(context).unfocus();
-                            },
-                            autofocus: true,
-                            keyboardType: TextInputType.number,
-                            maxLength: 1,
-                            textAlign: TextAlign.center,
-                            decoration: const InputDecoration(
-                              counterText: '',
-                              border: OutlineInputBorder(),
-                              contentPadding: EdgeInsets.zero,
-                            ),
+              child: Form(
+                key: _formKey,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    SizedBox(
+                      width: 60,
+                      height: 100,
+                      child: Center(
+                        child: TextFormField(
+                          onChanged: (value) {
+                            if (value.isNotEmpty) {
+                              FocusScope.of(context).nextFocus();
+                            }
+                          },
+                          onTapOutside: (_) {
+                            FocusScope.of(context).unfocus();
+                          },
+                          autofocus: true,
+                          keyboardType: TextInputType.number,
+                          maxLength: 1,
+                          textAlign: TextAlign.center,
+                          decoration: const InputDecoration(
+                            counterText: '',
+                            border: OutlineInputBorder(),
+                            contentPadding: EdgeInsets.zero,
                           ),
                         ),
                       ),
-                      SizedBox(
-                        width: 60,
-                        height: 80,
-                        child: Center(
-                          child: TextFormField(
-                            onChanged: (value) {
-                              if (value.isNotEmpty) {
-                                FocusScope.of(context).nextFocus();
-                              }
-                            },
-                            onTapOutside: (_) {
-                              FocusScope.of(context).unfocus();
-                            },
-                            autofocus: true,
-                            keyboardType: TextInputType.number,
-                            maxLength: 1,
-                            textAlign: TextAlign.center,
-                            decoration: const InputDecoration(
-                              counterText: '',
-                              border: OutlineInputBorder(),
-                              contentPadding: EdgeInsets.zero,
-                            ),
+                    ),
+                    SizedBox(
+                      width: 60,
+                      height: 80,
+                      child: Center(
+                        child: TextFormField(
+                          onChanged: (value) {
+                            if (value.isNotEmpty) {
+                              FocusScope.of(context).nextFocus();
+                            }
+                          },
+                          onTapOutside: (_) {
+                            FocusScope.of(context).unfocus();
+                          },
+                          autofocus: true,
+                          keyboardType: TextInputType.number,
+                          maxLength: 1,
+                          textAlign: TextAlign.center,
+                          decoration: const InputDecoration(
+                            counterText: '',
+                            border: OutlineInputBorder(),
+                            contentPadding: EdgeInsets.zero,
                           ),
                         ),
                       ),
-                      SizedBox(
-                        width: 60,
-                        height: 80,
-                        child: Center(
-                          child: TextFormField(
-                            onChanged: (value) {
-                              if (value.isNotEmpty) {
-                                FocusScope.of(context).nextFocus();
-                              }
-                            },
-                            onTapOutside: (_) {
-                              FocusScope.of(context).unfocus();
-                            },
-                            autofocus: true,
-                            keyboardType: TextInputType.number,
-                            maxLength: 1,
-                            textAlign: TextAlign.center,
-                            decoration: const InputDecoration(
-                              counterText: '',
-                              border: OutlineInputBorder(),
-                              contentPadding: EdgeInsets.zero,
-                            ),
+                    ),
+                    SizedBox(
+                      width: 60,
+                      height: 80,
+                      child: Center(
+                        child: TextFormField(
+                          onChanged: (value) {
+                            if (value.isNotEmpty) {
+                              FocusScope.of(context).nextFocus();
+                            }
+                          },
+                          onTapOutside: (_) {
+                            FocusScope.of(context).unfocus();
+                          },
+                          autofocus: true,
+                          keyboardType: TextInputType.number,
+                          maxLength: 1,
+                          textAlign: TextAlign.center,
+                          decoration: const InputDecoration(
+                            counterText: '',
+                            border: OutlineInputBorder(),
+                            contentPadding: EdgeInsets.zero,
                           ),
                         ),
                       ),
-                      SizedBox(
-                        width: 60,
-                        height: 80,
-                        child: Center(
-                          child: TextFormField(
-                            onChanged: (value) {
-                              if (value.isNotEmpty) {
-                                FocusScope.of(context).unfocus();
-                              }
-                            },
-                            onTapOutside: (_) {
+                    ),
+                    SizedBox(
+                      width: 60,
+                      height: 80,
+                      child: Center(
+                        child: TextFormField(
+                          onChanged: (value) {
+                            if (value.isNotEmpty) {
                               FocusScope.of(context).unfocus();
-                            },
-                            autofocus: true,
-                            keyboardType: TextInputType.number,
-                            maxLength: 1,
-                            textAlign: TextAlign.center,
-                            decoration: const InputDecoration(
-                              counterText: '',
-                              border: OutlineInputBorder(),
-                              contentPadding: EdgeInsets.zero,
-                            ),
+                            }
+                          },
+                          onTapOutside: (_) {
+                            FocusScope.of(context).unfocus();
+                          },
+                          autofocus: true,
+                          keyboardType: TextInputType.number,
+                          maxLength: 1,
+                          textAlign: TextAlign.center,
+                          decoration: const InputDecoration(
+                            counterText: '',
+                            border: OutlineInputBorder(),
+                            contentPadding: EdgeInsets.zero,
                           ),
                         ),
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ),
             ),
