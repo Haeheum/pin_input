@@ -31,7 +31,12 @@ class OtpForm extends StatelessWidget {
           ),
           actions: [
             IconButton(
-              onPressed: toggleTheme,
+              onPressed: () {
+                toggleTheme();
+                WidgetsBinding.instance.addPostFrameCallback((_) {
+                  FocusScope.of(context).nextFocus();
+                });
+              },
               icon: Icon(isLightTheme ? Icons.nightlight : Icons.sunny),
             ),
           ],
@@ -57,6 +62,8 @@ class OtpForm extends StatelessWidget {
                       height: 100,
                       child: Center(
                         child: TextFormField(
+                          autofocus: true,
+                          keyboardAppearance: isLightTheme ? Brightness.light : Brightness.dark,
                           onChanged: (value) {
                             if (value.isNotEmpty) {
                               FocusScope.of(context).nextFocus();
@@ -65,7 +72,6 @@ class OtpForm extends StatelessWidget {
                           onTapOutside: (_) {
                             FocusScope.of(context).unfocus();
                           },
-                          autofocus: true,
                           keyboardType: TextInputType.number,
                           maxLength: 1,
                           textAlign: TextAlign.center,
@@ -90,7 +96,6 @@ class OtpForm extends StatelessWidget {
                           onTapOutside: (_) {
                             FocusScope.of(context).unfocus();
                           },
-                          autofocus: true,
                           keyboardType: TextInputType.number,
                           maxLength: 1,
                           textAlign: TextAlign.center,
@@ -115,7 +120,6 @@ class OtpForm extends StatelessWidget {
                           onTapOutside: (_) {
                             FocusScope.of(context).unfocus();
                           },
-                          autofocus: true,
                           keyboardType: TextInputType.number,
                           maxLength: 1,
                           textAlign: TextAlign.center,
@@ -140,7 +144,6 @@ class OtpForm extends StatelessWidget {
                           onTapOutside: (_) {
                             FocusScope.of(context).unfocus();
                           },
-                          autofocus: true,
                           keyboardType: TextInputType.number,
                           maxLength: 1,
                           textAlign: TextAlign.center,
